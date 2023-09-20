@@ -1,0 +1,42 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="input-wrapper">
+    <input
+      class="input"
+      type="text"
+      placeholder="Search for a country"
+      [(ngModel)]="searchTearm"
+    />
+
+    <select class="dropdown" [(ngModel)]="filterRegion">
+      <option value="">Filter by Region</option>
+      <option *ngFor="let country of regions">{{ country.region }}</option>
+    </select>
+  </div>
+  <div class="wrapperCard">
+    <div class="country-card" *ngFor="let country of filteredCountries">
+      <!-- Add/Remove from Favorites Button -->
+      <button class="add-favorite-button" (click)="toggleFavorite(country)">
+        {{ isFavorite(country) ? "Remove from Favorites" : "Add to Favorites" }}
+      </button>
+
+      <div class="flag" (click)="openDialog(country)">
+        <img
+          [src]="country.flags.png"
+          alt="Flag of {{ country.name.common }}"
+        />
+
+        <div class="coat-of-arms">
+          <img
+            [src]="country.coatOfArms.png"
+            alt="Coat of Arms of {{ country.name.common }}"
+          />
+        </div>
+      </div>
+
+      <div class="country-name">{{ country.name.common }}</div>
+      <span *ngIf="isFavorite(country)">⭐</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+.wrapper {
+  grid-gap: 10px;
+  padding: 10px;
+}
+.wrapperCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+.dropdown {
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.input {
+  width: 500px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+}
+.country-card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.flag img {
+  width: 100%;
+  height: auto;
+}
+
+.coat-of-arms img {
+  width: 40px;
+  height: 40px;
+}
+
+.country-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.add-favorite-button {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
